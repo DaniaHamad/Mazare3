@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:mazare3/controllers/onboarding_customer_controller.dart';
 import 'package:mazare3/views/home_view.dart';
+import 'package:mazare3/views/login.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
@@ -59,7 +60,7 @@ class OnboardingCustomerView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children:[
             TextButton(onPressed: (){
-              Get.to(HomeView());
+              Get.to(LoginView());
             }, child: const Text('SKIP')),
             Center(
               child: SmoothPageIndicator(
