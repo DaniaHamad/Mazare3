@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/onboarding_farmer_controller.dart';
 import 'package:mazare3/views/home_view.dart';
+import 'package:mazare3/views/login.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
@@ -57,7 +58,7 @@ class OnboardingFarmerView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children:[
             TextButton(onPressed: (){
-              Get.to(HomeView());
+              Get.to(LoginView());
             }, child: const Text('SKIP')),
             Center(
               child: SmoothPageIndicator(
