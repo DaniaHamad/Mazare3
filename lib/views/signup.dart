@@ -67,8 +67,37 @@ class SignupView extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
+               const SizedBox(
+                height: 6,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.email),
+                    label: Text("  Gmail   "),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.teal[300],
+                      textStyle: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 6,
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.facebook),
+                    label: Text("Facebook"),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.teal[300],
+                      textStyle: TextStyle(fontSize: 15),
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(
-                height: 12,
+                height: 6,
               ),
               Text(
                 'OR',
