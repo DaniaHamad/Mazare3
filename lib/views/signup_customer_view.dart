@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mazare3/views/farmer_or_customer_view.dart';
-import 'login.dart';
+import 'farmer_or_customer_view.dart';
+import 'login_customer_view.dart';
 
-class SignupView extends StatelessWidget {
+class SignupCustomerView extends StatelessWidget {
   TextEditingController fNameCtrl = TextEditingController();
   TextEditingController lNameCtrl = TextEditingController();
   TextEditingController noCtrl = TextEditingController();
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController passCtrl = TextEditingController();
 
-  SignupView({Key? key}) : super(key: key);
+  SignupCustomerView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,31 +22,17 @@ class SignupView extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  GestureDetector(
-                    onTap: () => () {
-                      Get.to(FarmerOrCustomerView());
-                    },
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Card(
-                            child: SizedBox(
-                              height: 37,
-                              width: 37,
-                              child: Center(
-                                child: Icon(
-                                  Icons.arrow_back,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
+                  CustomPaint(
+              size: Size(92, 92),
+              painter: RPSCustomPainter(),
+              child: IconButton(
+                onPressed: () {Get.to(FarmerOrCustomerView());},
+                icon: const Icon(Icons.keyboard_arrow_left_outlined),
+                iconSize: 35,
+                color: Colors.teal,
+              ),
+            ),
+                const SizedBox(
                     width: 18,
                   ),
                   const Text(
@@ -121,7 +107,7 @@ class SignupView extends StatelessWidget {
                       onSurface: Colors.teal[300],
                     ),
                     onPressed: () {
-                      Get.to(LoginView());
+                      Get.to(LoginCustomerView());
                     },
                     child: const Text('log in?'),
                   ),
@@ -210,5 +196,52 @@ class SignupView extends StatelessWidget {
       ),
       obscureText: secure,
     );
+  }
+}
+class RPSCustomPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
+    paint_0_fill.color = Colors.white.withOpacity(1.0);
+    canvas.drawRRect(
+        RRect.fromRectAndCorners(
+            Rect.fromLTWH(size.width * 0.06521739, size.height * 0.02173913,
+                size.width * 0.8695652, size.height * 0.8695652),
+            bottomRight: Radius.circular(size.width * 0.1630435),
+            bottomLeft: Radius.circular(size.width * 0.1630435),
+            topLeft: Radius.circular(size.width * 0.1630435),
+            topRight: Radius.circular(size.width * 0.1630435)),
+        paint_0_fill);
+
+    Paint paint_1_stroke = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 2;
+    paint_1_stroke.color = Color(0xff2F8286).withOpacity(1.0);
+    canvas.drawRRect(
+        RRect.fromRectAndCorners(
+            Rect.fromLTWH(size.width * 0.05706522, size.height * 0.01358696,
+                size.width * 0.8858696, size.height * 0.8858696),
+            bottomRight: Radius.circular(size.width * 0.1711957),
+            bottomLeft: Radius.circular(size.width * 0.1711957),
+            topLeft: Radius.circular(size.width * 0.1711957),
+            topRight: Radius.circular(size.width * 0.1711957)),
+        paint_1_stroke);
+
+    Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
+    paint_1_fill.color = Color.fromARGB(255, 255, 255, 255).withOpacity(1.0);
+    canvas.drawRRect(
+        RRect.fromRectAndCorners(
+            Rect.fromLTWH(size.width * 0.05706522, size.height * 0.01358696,
+                size.width * 0.8858696, size.height * 0.8858696),
+            bottomRight: Radius.circular(size.width * 0.1711957),
+            bottomLeft: Radius.circular(size.width * 0.1711957),
+            topLeft: Radius.circular(size.width * 0.1711957),
+            topRight: Radius.circular(size.width * 0.1711957)),
+        paint_1_fill);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
   }
 }

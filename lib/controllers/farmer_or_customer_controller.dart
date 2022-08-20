@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/models/onboarding_info.dart';
-import 'package:mazare3/views/home_view.dart';
 
 class OnboardingFarmerOrCustomerController extends GetxController {
   var selectedPageIndex = 0.obs;
