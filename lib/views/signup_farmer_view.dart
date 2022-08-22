@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'farmer_or_customer_view.dart';
+import 'LoginOrSignup_view.dart';
 import 'login_farmer_view.dart';
 
 class SignupFarmerView extends StatelessWidget {

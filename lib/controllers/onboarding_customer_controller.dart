@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/models/onboarding_info.dart';
-import '../views/login_customer_view.dart';
+import '../views/login_view.dart';
 
 
 class OnboardingCustomerController extends GetxController {

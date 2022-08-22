@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mazare3/views/farmer_or_customer_view.dart';
+import 'package:mazare3/views/LoginOrSignup_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: const FarmerOrCustomerView(),
+      home: SafeArea(child: FarmerOrCustomerView()),
     );
   }
 }

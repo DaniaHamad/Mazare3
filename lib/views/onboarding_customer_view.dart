@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/onboarding_customer_controller.dart';
-import 'login_customer_view.dart';
+import 'login_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingCustomerView extends StatelessWidget {

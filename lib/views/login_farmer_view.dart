@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mazare3/constants/app_colors.dart';
 import 'signup_farmer_view.dart';
-import 'farmer_or_customer_view.dart';
+import 'LoginOrSignup_view.dart';
 
 class LoginFarmerView extends StatelessWidget {
   LoginFarmerView({Key? key}) : super(key: key);
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController passCtrl = TextEditingController();
+  AppColor appColor = AppColor();
 
   @override
   Widget build(BuildContext context) {
@@ -18,15 +20,17 @@ class LoginFarmerView extends StatelessWidget {
             Row(
               children: [
                 CustomPaint(
-              size: Size(92, 92),
-              painter: RPSCustomPainter(),
-              child: IconButton(
-                onPressed: () {Get.to(FarmerOrCustomerView());},
-                icon: const Icon(Icons.keyboard_arrow_left_outlined),
-                iconSize: 35,
-                color: Colors.teal,
-              ),
-            ),
+                  size: Size(92, 92),
+                  painter: RPSCustomPainter(),
+                  child: IconButton(
+                    onPressed: () {
+                      Get.to(FarmerOrCustomerView());
+                    },
+                    icon: const Icon(Icons.keyboard_arrow_left_outlined),
+                    iconSize: 35,
+                    color: appColor.primaryColor,
+                  ),
+                ),
                 const SizedBox(
                   width: 18,
                 ),
@@ -90,37 +94,37 @@ class LoginFarmerView extends StatelessWidget {
               ),
             ),
             const SizedBox(
-                height: 6,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.email),
-                    label: Text("  Gmail   "),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[300],
-                      textStyle: TextStyle(fontSize: 15),
-                    ),
+              height: 6,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.email),
+                  label: Text("  Gmail   "),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.teal[300],
+                    textStyle: TextStyle(fontSize: 15),
                   ),
-                  const SizedBox(
-                    width: 6,
+                ),
+                const SizedBox(
+                  width: 6,
+                ),
+                ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.facebook),
+                  label: Text("Facebook"),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.teal[300],
+                    textStyle: TextStyle(fontSize: 15),
                   ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.facebook),
-                    label: Text("Facebook"),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[300],
-                      textStyle: TextStyle(fontSize: 15),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 6,
-              ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 6,
+            ),
             Text(
               'OR',
               style: TextStyle(
@@ -226,4 +230,3 @@ class RPSCustomPainter extends CustomPainter {
     return true;
   }
 }
-
