@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/onboarding_farmer_controller.dart';
-import 'login_farmer_view.dart';
+import '../routes/routes.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 
@@ -12,26 +12,43 @@ class OnboardingFarmerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(bottom: 80),
+          padding: const EdgeInsets.only(bottom: 100),
           child: 
             PageView.builder(
                 controller: _controller.pageController,
                 onPageChanged: _controller.selectedPageIndex,
                 itemCount: _controller.onboardingPages.length,
                 itemBuilder: (context, index) {
-                  return Container(
-                    child: Column(
+                  return Column(
+                    
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SvgPicture.asset(
-                            _controller.onboardingPages[index].imageAsset),
-                        SizedBox(height: 32),
+                        Expanded(
+                          
+                          child: Container(
+                            margin: EdgeInsets.all(30.0),
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                            color: Color(0xFFF5F5F5),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SvgPicture.asset(
+                                  _controller.onboardingPages[index].imageAsset,
+                                
+                                ),
+                            ),
+                          ),
+                        ),
+                        
                         Text(
                           _controller.onboardingPages[index].title,
                           style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.w500),
+                              fontSize: 24, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 32),
                         Padding(
@@ -42,14 +59,15 @@ class OnboardingFarmerView extends StatelessWidget {
                             style: TextStyle(fontSize: 18),
                           ),
                         ),
+                        SizedBox(height: 32),
                       ],
-                    ),
-                  );
+                    );
                 }
                 
                 ),
         ),
       ),
+      
       bottomSheet: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         height: 80,
@@ -58,9 +76,10 @@ class OnboardingFarmerView extends StatelessWidget {
           children: [
             TextButton(
                 onPressed: () {
-                  Get.to(LoginFarmerView());
+                  Get.toNamed(RoutesClass.getLoginRoute());
                 },
-                child: const Text('SKIP')),
+                child: const Text('SKIP',
+                style: TextStyle(color: Colors.teal),)),
             Center(
               child: SmoothPageIndicator(
                 controller: _controller.pageController,

@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'farmer_or_customer_view.dart';
 import 'signup_customer_view.dart';
 
-class LoginCustomerView extends StatelessWidget {
-  LoginCustomerView({Key? key}) : super(key: key);
+class LoginView extends StatelessWidget {
+  LoginView({Key? key}) : super(key: key);
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController passCtrl = TextEditingController();
 

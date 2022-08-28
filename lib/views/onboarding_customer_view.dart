@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/onboarding_customer_controller.dart';
-import 'login_customer_view.dart';
+import 'package:mazare3/routes/routes.dart';
+import 'login_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingCustomerView extends StatelessWidget {
@@ -12,41 +13,63 @@ class OnboardingCustomerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(bottom: 80),
-          child: PageView.builder(
-              controller: _controller.pageController,
-              onPageChanged: _controller.selectedPageIndex,
-              itemCount: _controller.onboardingPages.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                          _controller.onboardingPages[index].imageAsset),
-                      SizedBox(height: 32),
-                      Text(
-                        _controller.onboardingPages[index].title,
-                        style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.w500),
-                      ),
-                      SizedBox(height: 32),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 64.0),
-                        child: Text(
-                          _controller.onboardingPages[index].description,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 18),
+          padding: const EdgeInsets.only(bottom: 100),
+          child: 
+            PageView.builder(
+                controller: _controller.pageController,
+                onPageChanged: _controller.selectedPageIndex,
+                itemCount: _controller.onboardingPages.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          
+                          child: Container(
+                            margin: EdgeInsets.all(30.0),
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                            color: Color(0xFFF5F5F5),
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SvgPicture.asset(
+                                  _controller.onboardingPages[index].imageAsset,
+                                
+                                ),
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
-              }),
+                        
+                        Text(
+                          _controller.onboardingPages[index].title,
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 32),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 64.0),
+                          child: Text(
+                            _controller.onboardingPages[index].description,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 18),
+                          ),
+                        ),
+                        SizedBox(height: 32),
+                      ],
+                    );
+                }
+                
+                ),
         ),
       ),
+      
+      
       bottomSheet: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         height: 80,
@@ -55,7 +78,7 @@ class OnboardingCustomerView extends StatelessWidget {
           children: [
             TextButton(
                 onPressed: () {
-                  Get.to(LoginCustomerView());
+                  Get.toNamed(RoutesClass.getLoginRoute());
                 },
                 child: const Text('SKIP')),
             Center(

@@ -6,6 +6,8 @@ import 'package:mazare3/views/onboarding_customer_view.dart';
 import 'package:mazare3/views/onboarding_farmer_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../routes/routes.dart';
+
 class FarmerOrCustomerView extends StatelessWidget {
   const FarmerOrCustomerView({Key? key}) : super(key: key);
 
@@ -13,31 +15,35 @@ class FarmerOrCustomerView extends StatelessWidget {
   Widget build(BuildContext context) {
     final _controller = OnboardingFarmerOrCustomerController();
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(bottom: 80),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                height: 300,
+              Expanded(
                 child: PageView.builder(
                     controller: _controller.pageController,
                     onPageChanged: _controller.selectedPageIndex,
                     itemCount: _controller.onboardingPages.length,
                     itemBuilder: (context, index) {
                       return Container(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                                _controller.onboardingPages[index].imageAsset),
-                          ],
+                        margin: const EdgeInsets.all(30.0),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFF5F5F5),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+
+                        // margin: EdgeInsets.all(10.0),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset(
+                              _controller.onboardingPages[index].imageAsset),
                         ),
                       );
                     }),
               ),
-              SizedBox(height: 32),
               SmoothPageIndicator(
                 controller: _controller.pageController,
                 count: _controller.onboardingPages.length,
@@ -47,42 +53,62 @@ class FarmerOrCustomerView extends StatelessWidget {
                     activeDotColor: Colors.teal),
                 onDotClicked: (index) => _controller.jumpToPage(index),
               ),
-              
-             SizedBox(height: 100),
-             const Text('mazare3 is here to help farm owners and customers'),
-SizedBox(height: 32),
-             Container(
-         padding: const EdgeInsets.symmetric(horizontal: 30),
-         height: 60,
-        width: 400,
-            child: CustomPaint(
-              size: Size(0, 0),
-              painter: RPSCustomPainter(),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  TextButton(
-                      onPressed: () {
-                        Get.to(OnboardingFarmerView());
-                      },
-                      child: const Text('Farm owner')),
-                  TextButton(
-                    onPressed: () {
-                      Get.to(OnboardingCustomerView());
-                    },
-                    child: const Text('Customer'),
-                  )
-                ],
+              const SizedBox(height: 50),
+              const Text(
+                'Mazare3',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25.0,
+                ),
               ),
-            ),
-          
-        ),
-      ],
+              const SizedBox(height: 15),
+              const Text(
+                'Mazare3 is here to help farm owners and customers',
+                style: TextStyle(fontSize: 15.0),
+              ),
+              const SizedBox(height: 32),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                height: 60,
+                width: 400,
+                child: CustomPaint(
+                  size: const Size(0, 0),
+                  painter: RPSCustomPainter(),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextButton(
+                          onPressed: () {
+                            Get.toNamed(RoutesClass.getOnboardingFarmerRoute());
+                          },
+                          child: const Text(
+                            'Farm owner',
+                            style: TextStyle(
+                              
+                              fontSize: 16.0
+                            ),
+                            )
+                            ),
+                      TextButton(
+                        onPressed: () {
+                          Get.toNamed(RoutesClass.getOnboardingCustomerRoute());
+                        },
+                        child: const Text(
+                          'Customer',
+                          style: TextStyle(
+                              
+                              fontSize: 16.0
+                            ),),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
-);
-
+    );
   }
 }
 
@@ -104,7 +130,7 @@ class RPSCustomPainter extends CustomPainter {
 
     Paint paint_1_stroke = Paint()
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2;//size.width * 0.003750000
+      ..strokeWidth = 4; //size.width * 0.003750000
     paint_1_stroke.color = Color(0xff2F8286).withOpacity(1.0);
     canvas.drawRRect(
         RRect.fromRectAndCorners(

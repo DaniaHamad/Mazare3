@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../routes/routes.dart';
 import 'farmer_or_customer_view.dart';
-import 'login_farmer_view.dart';
+import 'login_view.dart';
 
 class SignupFarmerView extends StatelessWidget {
   TextEditingController fNameCtrl = TextEditingController();
@@ -26,7 +27,7 @@ class SignupFarmerView extends StatelessWidget {
               size: Size(92, 92),
               painter: RPSCustomPainter(),
               child: IconButton(
-                onPressed: () {Get.to(FarmerOrCustomerView());},
+                onPressed: () {Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());},
                 icon: const Icon(Icons.keyboard_arrow_left_outlined),
                 iconSize: 35,
                 color: Colors.teal,
@@ -107,7 +108,7 @@ class SignupFarmerView extends StatelessWidget {
                       onSurface: Colors.teal[300],
                     ),
                     onPressed: () {
-                      Get.to(LoginFarmerView());
+                      Get.toNamed(RoutesClass.getLoginRoute());
                     },
                     child: const Text('log in?'),
                   ),

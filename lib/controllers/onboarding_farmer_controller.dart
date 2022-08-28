@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/models/onboarding_info.dart';
-import 'package:mazare3/views/login_farmer_view.dart';
+import 'package:mazare3/views/login_view.dart';
+
+import '../routes/routes.dart';
 
 class OnboardingFarmerController extends GetxController {
   var selectedPageIndex = 0.obs;
@@ -10,7 +12,7 @@ class OnboardingFarmerController extends GetxController {
 
   forwardAction() {
     if (isLastPage) {
-      Get.to(()=>LoginFarmerView());
+      Get.toNamed(RoutesClass.getLoginRoute());
     } else
       pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
   }
