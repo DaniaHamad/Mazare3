@@ -23,13 +23,13 @@ class OnboardingFarmerController extends GetxController {
 
 
   List<OnboardingInfo> onboardingPages = [
-    OnboardingInfo('assets/onboarding_images/group _124.svg', 'START EARNING',
+    OnboardingInfo('assets/onboarding_images/start-earning.svg', 'START EARNING',
         'Using Mazare3, it is now easy and free to list your farm!'),
-    OnboardingInfo('assets/onboarding_images/group_125.svg', 'EARN MORE',
+    OnboardingInfo('assets/onboarding_images/earn-more.svg', 'EARN MORE',
         'We promise to help you earn more with your farm!'),
-    OnboardingInfo('assets/onboarding_images/select_cuate.svg', 'EASY PLANNING',
+    OnboardingInfo('assets/onboarding_images/easy-planning.svg', 'EASY PLANNING',
         'You can select the dates you want to rent your farm, the type of rental and the audience you want to target.'),
-    OnboardingInfo('assets/onboarding_images/group_127.svg', 'MAZARE3 SUPPORT',
+    OnboardingInfo('assets/onboarding_images/mazare3-support.svg', 'MAZARE3 SUPPORT',
         'Mazare3 provides you with around-the-clock support.'),
   ];
 }

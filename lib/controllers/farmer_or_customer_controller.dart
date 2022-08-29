@@ -20,13 +20,11 @@ class OnboardingFarmerOrCustomerController extends GetxController {
 
 
   List<OnboardingInfo> onboardingPages = [
-    OnboardingInfo('assets/onboarding_images/group_120.svg', '',
+    OnboardingInfo('assets/onboarding_images/finding-the-right-farm.svg', '',
         ''),
-    OnboardingInfo('assets/onboarding_images/group_122.svg', '',
+    OnboardingInfo('assets/onboarding_images/for-sale-pana.svg', '',
         ''),
-    OnboardingInfo('assets/onboarding_images/payment_information_cuate.svg', '',
-        ''),
-    OnboardingInfo('assets/onboarding_images/group_123.svg', '',
+    OnboardingInfo('assets/onboarding_images/we-value-our-customers.svg', '',
         ''),
   ];
 }

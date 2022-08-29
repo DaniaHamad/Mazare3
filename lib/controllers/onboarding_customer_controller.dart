@@ -23,11 +23,11 @@ class OnboardingCustomerController extends GetxController {
 
 
   List<OnboardingInfo> onboardingPages = [
-    OnboardingInfo('assets/onboarding_images/group_120.svg', 'FINDING THE RIGHT FARM',
+    OnboardingInfo('assets/onboarding_images/finding-the-right-farm.svg', 'FINDING THE RIGHT FARM',
         'Mazare3 helps you pick the right farm for you.'),
-    OnboardingInfo('assets/onboarding_images/payment_information_cuate.svg', 'EASY PAYMENT',
+    OnboardingInfo('assets/onboarding_images/easy-payments.svg', 'EASY PAYMENTS',
         'Now paying for your farm is easier than ever.'),
-    OnboardingInfo('assets/onboarding_images/group_123.svg', 'WE VALUE OUR CUSTOMERS',
+    OnboardingInfo('assets/onboarding_images/we-value-our-customers.svg', 'WE VALUE OUR CUSTOMERS',
         'if you have any issues with a farm you booked we are here to help!'),
   ];
 }
