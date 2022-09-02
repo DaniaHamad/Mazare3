@@ -2,9 +2,183 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'farmer_or_customer_view.dart';
 import 'signup_customer_view.dart';
+import 'signup_farmer_view.dart';
 
 class LoginView extends StatelessWidget {
-  LoginView({Key? key}) : super(key: key);
+  const LoginView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  CustomPaint(
+                    size: Size(92, 92),
+                    painter: RPSCustomPainter(),
+                    child: IconButton(
+                      onPressed: () {
+                        Get.to(FarmerOrCustomerView());
+                      },
+                      icon: const Icon(Icons.keyboard_arrow_left_outlined),
+                      iconSize: 35,
+                      color: Colors.teal,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 30,
+                  ),
+                ],
+              ),
+              Icon(
+                Icons.photo,
+                color: Colors.grey.shade300,
+                size: 100,
+              ),
+              const SizedBox(
+                height: 70,
+              ),
+              SingleChildScrollView(
+                reverse: true,
+                child: Center(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xFFF5F5F5),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(40),
+                        topLeft: Radius.circular(40),
+                      ),
+                    ),
+                    child: Column(children: [
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      MaterialButton(
+                          minWidth: 300,
+                          height: 50,
+                          color: Colors.teal.shade300,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0)),
+                          child: const Text(
+                            ' Sign Up with email ',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                          onPressed: () {
+                            Get.to(SignupFarmerView());
+                          }),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Expanded(
+                            child: Divider(
+                              indent: 90.0,
+                              endIndent: 45.0,
+                              thickness: 1,
+                            ),
+                          ),
+                          Text(
+                            'OR',
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          Expanded(
+                            child: Divider(
+                              indent: 45.0,
+                              endIndent: 90.0,
+                              thickness: 1,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              onPrimary: Colors.black,
+                            ),
+                            onPressed: () {},
+                            child: const Image(
+                              image: AssetImage("assets/images/google.png"),
+                              height: 22,
+                              width: 28,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 6,
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              primary: Colors.white,
+                              onPrimary: Colors.black,
+                            ),
+                            onPressed: () {},
+                            child: const Image(
+                              image: AssetImage("assets/images/facebook.png"),
+                              height: 22,
+                              width: 28,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Already have an account?',
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                          ),
+                          TextButton(
+                            style: TextButton.styleFrom(
+                              primary: Colors.teal[300],
+                              onSurface: Colors.teal[300],
+                            ),
+                            onPressed: () {
+                              Get.to(LoginCustomerView());
+                            },
+                            child: const Text('Login?'),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 60,
+                      ),
+                    ]),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+class LoginCustomerView extends StatelessWidget {
+  LoginCustomerView({Key? key}) : super(key: key);
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController passCtrl = TextEditingController();
 
@@ -18,26 +192,26 @@ class LoginView extends StatelessWidget {
             Row(
               children: [
                 CustomPaint(
-              size: Size(92, 92),
-              painter: RPSCustomPainter(),
-              child: IconButton(
-                onPressed: () {Get.to(FarmerOrCustomerView());},
-                icon: const Icon(Icons.keyboard_arrow_left_outlined),
-                iconSize: 35,
-                color: Colors.teal,
-              ),
-            ),
-                const SizedBox(
-                  width: 18,
-                ),
-                const Text(
-                  'Login',
-                  style: TextStyle(
-                    fontSize: 30,
-                    color: Colors.black87,
+                  size: Size(92, 92),
+                  painter: RPSCustomPainter(),
+                  child: IconButton(
+                    onPressed: () {
+                      Get.to(FarmerOrCustomerView());
+                    },
+                    icon: const Icon(Icons.keyboard_arrow_left_outlined),
+                    iconSize: 35,
+                    color: Colors.teal,
                   ),
                 ),
+                const SizedBox(
+                  width: 30,
+                ),
               ],
+            ),
+            Icon(
+              Icons.photo,
+              color: Colors.grey.shade300,
+              size: 100,
             ),
             const SizedBox(
               height: 38,
@@ -67,7 +241,7 @@ class LoginView extends StatelessWidget {
               height: 30,
             ),
             MaterialButton(
-                minWidth: 800,
+                minWidth: 300,
                 height: 50,
                 color: Colors.teal.shade300,
                 shape: RoundedRectangleBorder(
@@ -81,52 +255,71 @@ class LoginView extends StatelessWidget {
                 ),
                 onPressed: () {}),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
-            const Text(
-              'Log in with one of the following options.',
-              style: TextStyle(
-                color: Colors.grey,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Expanded(
+                  child: Divider(
+                    indent: 90.0,
+                    endIndent: 45.0,
+                    thickness: 1,
+                  ),
+                ),
+                Text(
+                  'OR',
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.grey,
+                  ),
+                ),
+                Expanded(
+                  child: Divider(
+                    indent: 45.0,
+                    endIndent: 90.0,
+                    thickness: 1,
+                  ),
+                ),
+              ],
             ),
             const SizedBox(
-                height: 6,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.email),
-                    label: Text("  Gmail   "),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[300],
-                      textStyle: TextStyle(fontSize: 15),
-                    ),
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
                   ),
-                  const SizedBox(
-                    width: 6,
+                  onPressed: () {},
+                  child: const Image(
+                    image: AssetImage("assets/images/google.png"),
+                    height: 22,
+                    width: 28,
                   ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.facebook),
-                    label: Text("Facebook"),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[300],
-                      textStyle: TextStyle(fontSize: 15),
-                    ),
+                ),
+                const SizedBox(
+                  width: 6,
+                ),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    onPrimary: Colors.black,
                   ),
-                ],
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-            Text(
-              'OR',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.teal[300],
-              ),
+                  onPressed: () {},
+                  child: const Image(
+                    image: AssetImage("assets/images/facebook.png"),
+                    height: 22,
+                    width: 28,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 6,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -226,4 +419,3 @@ class RPSCustomPainter extends CustomPainter {
     return true;
   }
 }
-

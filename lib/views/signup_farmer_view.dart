@@ -24,16 +24,18 @@ class SignupFarmerView extends StatelessWidget {
               Row(
                 children: [
                   CustomPaint(
-              size: Size(92, 92),
-              painter: RPSCustomPainter(),
-              child: IconButton(
-                onPressed: () {Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());},
-                icon: const Icon(Icons.keyboard_arrow_left_outlined),
-                iconSize: 35,
-                color: Colors.teal,
-              ),
-            ),
-                const SizedBox(
+                    size: Size(92, 92),
+                    painter: RPSCustomPainter(),
+                    child: IconButton(
+                      onPressed: () {
+                        Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());
+                      },
+                      icon: const Icon(Icons.keyboard_arrow_left_outlined),
+                      iconSize: 35,
+                      color: Colors.teal,
+                    ),
+                  ),
+                  const SizedBox(
                     width: 18,
                   ),
                   const Text(
@@ -46,15 +48,16 @@ class SignupFarmerView extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
+              /*
               const Text(
                 'Sign up with one of the following options.',
                 style: TextStyle(
                   color: Colors.grey,
                 ),
               ),
-               const SizedBox(
+              const SizedBox(
                 height: 6,
               ),
               Row(
@@ -117,6 +120,8 @@ class SignupFarmerView extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
+
+              */
               buildMyField(
                 'Enter your first name',
                 fNameCtrl,
@@ -150,6 +155,41 @@ class SignupFarmerView extends StatelessWidget {
                 passCtrl,
                 const Icon(Icons.security),
                 true,
+              ),
+              const SizedBox(height: 8),
+              Container(
+                //margin: const EdgeInsets.fromLTRB(10, 20, 10, 10),
+                padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade400),
+                  borderRadius: BorderRadius.circular(18),
+                ),
+                child: Column(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.file_upload_outlined),
+                      color: Colors.teal.shade300,
+                      iconSize: 40,
+                    ),
+                    const Text(
+                      'Upload your goverment ID here',
+                      style: TextStyle(color: Colors.black45),
+                    ),
+                    const Text(
+                      '.png Max file size: 5 MB',
+                      style: TextStyle(color: Colors.black26, fontSize: 12),
+                    ),
+                    Divider(
+                      height: 20,
+                      color: Colors.grey.shade400,
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 0.0, 240, 0.0),
+                      child: Icon(Icons.insert_drive_file_outlined),
+                    )
+                  ],
+                ),
               ),
               const SizedBox(height: 18),
               MaterialButton(
@@ -199,6 +239,7 @@ class SignupFarmerView extends StatelessWidget {
     );
   }
 }
+
 class RPSCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {

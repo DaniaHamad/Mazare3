@@ -24,95 +24,24 @@ class SignupCustomerView extends StatelessWidget {
               Row(
                 children: [
                   CustomPaint(
-              size: Size(92, 92),
-              painter: RPSCustomPainter(),
-              child: IconButton(
-                onPressed: () {Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());},
-                icon: const Icon(Icons.keyboard_arrow_left_outlined),
-                iconSize: 35,
-                color: Colors.teal,
-              ),
-            ),
-                const SizedBox(
-                    width: 18,
-                  ),
-                  const Text(
-                    'Signup',
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black87,
+                    size: Size(92, 92),
+                    painter: RPSCustomPainter(),
+                    child: IconButton(
+                      onPressed: () {
+                        Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());
+                      },
+                      icon: const Icon(Icons.keyboard_arrow_left_outlined),
+                      iconSize: 35,
+                      color: Colors.teal,
                     ),
+                  ),
+                  const SizedBox(
+                    width: 18,
                   ),
                 ],
               ),
               const SizedBox(
                 height: 30,
-              ),
-              const Text(
-                'Sign up with one of the following options.',
-                style: TextStyle(
-                  color: Colors.grey,
-                ),
-              ),
-               const SizedBox(
-                height: 6,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.email),
-                    label: Text("  Gmail   "),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[300],
-                      textStyle: TextStyle(fontSize: 15),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 6,
-                  ),
-                  ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: Icon(Icons.facebook),
-                    label: Text("Facebook"),
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[300],
-                      textStyle: TextStyle(fontSize: 15),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                'OR',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.teal[300],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Already have an account?',
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-                  TextButton(
-                    style: TextButton.styleFrom(
-                      primary: Colors.teal[300],
-                      onSurface: Colors.teal[300],
-                    ),
-                    onPressed: () {
-                      Get.toNamed(RoutesClass.getLoginRoute());
-                    },
-                    child: const Text('log in?'),
-                  ),
-                ],
               ),
               const SizedBox(
                 height: 20,
@@ -199,6 +128,7 @@ class SignupCustomerView extends StatelessWidget {
     );
   }
 }
+
 class RPSCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
