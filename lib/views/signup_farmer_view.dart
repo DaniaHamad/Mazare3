@@ -123,37 +123,42 @@ class SignupFarmerView extends StatelessWidget {
 
               */
               buildMyField(
-                'Enter your first name',
+                'First Name',
                 fNameCtrl,
+                'Enter your first name',
                 const Icon(Icons.face),
                 false,
               ),
               const SizedBox(height: 8),
               buildMyField(
-                'Enter your last name',
+                'Last Name',
                 lNameCtrl,
+                'Enter your last name',
                 const Icon(Icons.face),
                 false,
               ),
               const SizedBox(height: 8),
               buildMyField(
-                'Enter your phone number',
+                'Phone Number',
                 noCtrl,
+                'Enter your phone number',
                 const Icon(Icons.phone),
                 false,
               ),
               const SizedBox(height: 8),
               buildMyField(
-                'Example@gmail.com',
+                'Email',
                 emailCtrl,
+                'Example@gmail.com',
                 const Icon(Icons.email),
                 false,
               ),
               const SizedBox(height: 8),
               buildMyField(
-                'Pick a strong password',
+                'Password',
                 passCtrl,
-                const Icon(Icons.security),
+                'Pick a strong password',
+                const Icon(Icons.key),
                 true,
               ),
               const SizedBox(height: 8),
@@ -224,15 +229,16 @@ class SignupFarmerView extends StatelessWidget {
   }
   */
 
-  buildMyField(
-      String label, TextEditingController textCtrl, Icon myIcon, bool secure) {
+  buildMyField(String label, TextEditingController textCtrl, String hinttext,
+      Icon myIcon, bool secure) {
     return TextField(
       controller: textCtrl,
       decoration: InputDecoration(
-        prefixIcon: myIcon,
+        hintText: hinttext,
+        suffixIcon: myIcon,
         labelText: label,
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(18),
+          borderRadius: BorderRadius.circular(10),
         ),
       ),
       obscureText: secure,
