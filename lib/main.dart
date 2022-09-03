@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Mazare3',
       theme: ThemeData(
+        bottomSheetTheme:
+            const BottomSheetThemeData(backgroundColor: Colors.transparent),
         primarySwatch: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
