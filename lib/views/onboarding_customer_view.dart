@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/onboarding_customer_controller.dart';
 import 'package:mazare3/routes/routes.dart';
-import 'login_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingCustomerView extends StatelessWidget {
@@ -13,7 +12,7 @@ class OnboardingCustomerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(bottom: 100),
@@ -44,18 +43,18 @@ class OnboardingCustomerView extends StatelessWidget {
                     Text(
                       _controller.onboardingPages[index].title,
                       style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                          const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Color(0xff858585),),
                     ),
-                    SizedBox(height: 32),
+                    const SizedBox(height: 32),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 64.0),
                       child: Text(
                         _controller.onboardingPages[index].description,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18,color: Color(0xffA6A6A6)),
                       ),
                     ),
-                    SizedBox(height: 32),
+                    const SizedBox(height: 32),
                   ],
                 );
               }),
@@ -68,10 +67,11 @@ class OnboardingCustomerView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton(
+              
                 onPressed: () {
-                  Get.toNamed(RoutesClass.getLoginRoute());
+                  Get.toNamed(RoutesClass.getSignupRoute());
                 },
-                child: const Text('SKIP')),
+                child: const Text('Skip',style: TextStyle(fontFamily: "Georgia",color: Color(0xffA6A6A6)),),),
             Center(
               child: SmoothPageIndicator(
                 controller: _controller.pageController,
@@ -89,6 +89,8 @@ class OnboardingCustomerView extends StatelessWidget {
               child: OutlinedButton(
                 onPressed: _controller.forwardAction,
                 style: OutlinedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  elevation: 3,
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),

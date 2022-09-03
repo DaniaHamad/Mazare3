@@ -11,7 +11,6 @@ class OnboardingFarmerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(bottom: 100),
@@ -25,10 +24,10 @@ class OnboardingFarmerView extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        margin: EdgeInsets.all(30.0),
+                        margin: const EdgeInsets.all(30.0),
                         width: double.maxFinite,
                         decoration: BoxDecoration(
-                          color: Color(0xFFF5F5F5),
+                          color: const Color(0xFFF5F5F5),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: Padding(
@@ -41,19 +40,23 @@ class OnboardingFarmerView extends StatelessWidget {
                     ),
                     Text(
                       _controller.onboardingPages[index].title,
-                      style:
-                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xff858585),
+                      ),
                     ),
-                    SizedBox(height: 32),
+                    const SizedBox(height: 32),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 64.0),
                       child: Text(
                         _controller.onboardingPages[index].description,
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 18),
+                        style:
+                            const TextStyle(fontSize: 18, color: Color(0xffA6A6A6)),
                       ),
                     ),
-                    SizedBox(height: 32),
+                    const SizedBox(height: 32),
                   ],
                 );
               }),
@@ -66,13 +69,15 @@ class OnboardingFarmerView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton(
-                onPressed: () {
-                  Get.toNamed(RoutesClass.getLoginRoute());
-                },
-                child: const Text(
-                  'SKIP',
-                  style: TextStyle(color: Colors.teal),
-                )),
+              onPressed: () {
+                Get.toNamed(RoutesClass.getSignupRoute());
+              },
+              child: const Text(
+                'Skip',
+                style:
+                    TextStyle(fontFamily: "Georgia", color: Color(0xffA6A6A6)),
+              ),
+            ),
             Center(
               child: SmoothPageIndicator(
                 controller: _controller.pageController,
@@ -90,6 +95,8 @@ class OnboardingFarmerView extends StatelessWidget {
               child: OutlinedButton(
                 onPressed: _controller.forwardAction,
                 style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    elevation: 3,
                     padding: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),

@@ -58,17 +58,23 @@ class HomeCustomerView extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            RichText(
-              text: const TextSpan(
-                text: 'Let\'s find your ',
-                style: TextStyle(
-                    color: Color.fromRGBO(158, 158, 158, 1), fontSize: 26.0),
-                children: <TextSpan>[
-                  TextSpan(
-                      text: 'farm!',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.teal)),
-                ],
+            Padding(
+              padding: const EdgeInsets.only(right:200.0,left:20.0),
+              child: RichText(
+                textAlign: TextAlign.left,
+                text: const TextSpan(
+                  text: 'Let\'s find your ',
+                  
+                  style: TextStyle(
+                    
+                      color: Color.fromRGBO(158, 158, 158, 1), fontSize: 26.0),
+                  children: <TextSpan>[
+                    TextSpan(
+                        text: 'farm!',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.teal)),
+                  ],
+                ),
               ),
             ),
             const SizedBox(
@@ -81,12 +87,14 @@ class HomeCustomerView extends StatelessWidget {
                 children: [
                   const Expanded(
                     child: TextField(
+                      
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.search,
                           color: Colors.teal,
                         ),
                         hintText: "Search destination",
+                        hintStyle: TextStyle(fontSize: 20.0, color: Color(0xffDEDEDE)),
                         filled: true,
                         fillColor: Color.fromARGB(249, 249, 249, 249),
                       ),
@@ -126,19 +134,28 @@ class HomeCustomerView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ElevatedButton(onPressed: () {}, child: const Text("All")),
-                ElevatedButton(onPressed: () {}, child: const Text("Popular")),
+                ElevatedButton(onPressed: () {},
+                style: ElevatedButton.styleFrom(elevation: 0,), child: const Text("All"),),
+                ElevatedButton(onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  elevation: 0,
+                  primary: const Color(0xffF9F9F9)
+                  
+                  ),
+                   child: const Text("Popular",style: TextStyle(color: Colors.teal),),
+                ),
                 Directionality(
                   textDirection: TextDirection.rtl,
                   child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(elevation: 0,primary: const Color(0xffF9F9F9)),
                     onPressed: () {},
                     icon: const Icon(
                       Icons.keyboard_arrow_down,
-                      color: Colors.white,
+                      color: Colors.teal,
                     ),
                     label: const Text(
                       "Sort by price",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.teal),
                     ),
                   ),
                 )
@@ -230,7 +247,7 @@ class HomeCustomerView extends StatelessWidget {
           height: 50,
           decoration: BoxDecoration(
             color: const Color.fromARGB(249, 249, 249, 249),
-            border: Border.all(color: Colors.grey),
+            border: Border.all(color: const Color(0xffF2F2F2),width: 3),
             borderRadius: const BorderRadius.only(
               topRight: Radius.circular(40),
               topLeft: Radius.circular(40),

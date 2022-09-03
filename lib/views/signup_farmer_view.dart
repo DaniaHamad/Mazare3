@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../routes/routes.dart';
 import 'farmer_or_customer_view.dart';
-import 'login_view.dart';
+import 'signup_view.dart';
 
 class SignupFarmerView extends StatelessWidget {
   TextEditingController fNameCtrl = TextEditingController();
@@ -16,37 +16,33 @@ class SignupFarmerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        leading: Padding(
+          padding: const EdgeInsets.only(top: 20.0, left: 20),
+          child: OutlinedButton(
+            onPressed: () {
+              Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());
+            },
+            style: OutlinedButton.styleFrom(
+                padding: EdgeInsets.zero,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                side: const BorderSide(width: 2, color: Colors.teal)),
+            child: const Icon(
+              Icons.keyboard_arrow_left_outlined,
+              color: Colors.teal,
+              size: 25,
+            ),
+          ),
+        ),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Row(
-                children: [
-                  CustomPaint(
-                    size: Size(92, 92),
-                    painter: RPSCustomPainter(),
-                    child: IconButton(
-                      onPressed: () {
-                        Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());
-                      },
-                      icon: const Icon(Icons.keyboard_arrow_left_outlined),
-                      iconSize: 35,
-                      color: Colors.teal,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 18,
-                  ),
-                  const Text(
-                    'Signup',
-                    style: TextStyle(
-                      fontSize: 30,
-                      color: Colors.black87,
-                    ),
-                  ),
-                ],
-              ),
               const SizedBox(
                 height: 20,
               ),
@@ -246,50 +242,3 @@ class SignupFarmerView extends StatelessWidget {
   }
 }
 
-class RPSCustomPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = Colors.white.withOpacity(1.0);
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-            Rect.fromLTWH(size.width * 0.06521739, size.height * 0.02173913,
-                size.width * 0.8695652, size.height * 0.8695652),
-            bottomRight: Radius.circular(size.width * 0.1630435),
-            bottomLeft: Radius.circular(size.width * 0.1630435),
-            topLeft: Radius.circular(size.width * 0.1630435),
-            topRight: Radius.circular(size.width * 0.1630435)),
-        paint_0_fill);
-
-    Paint paint_1_stroke = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2;
-    paint_1_stroke.color = Color(0xff2F8286).withOpacity(1.0);
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-            Rect.fromLTWH(size.width * 0.05706522, size.height * 0.01358696,
-                size.width * 0.8858696, size.height * 0.8858696),
-            bottomRight: Radius.circular(size.width * 0.1711957),
-            bottomLeft: Radius.circular(size.width * 0.1711957),
-            topLeft: Radius.circular(size.width * 0.1711957),
-            topRight: Radius.circular(size.width * 0.1711957)),
-        paint_1_stroke);
-
-    Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
-    paint_1_fill.color = Color.fromARGB(255, 255, 255, 255).withOpacity(1.0);
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-            Rect.fromLTWH(size.width * 0.05706522, size.height * 0.01358696,
-                size.width * 0.8858696, size.height * 0.8858696),
-            bottomRight: Radius.circular(size.width * 0.1711957),
-            bottomLeft: Radius.circular(size.width * 0.1711957),
-            topLeft: Radius.circular(size.width * 0.1711957),
-            topRight: Radius.circular(size.width * 0.1711957)),
-        paint_1_fill);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}

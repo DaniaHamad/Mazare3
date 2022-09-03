@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/farmer_or_customer_controller.dart';
-import 'package:mazare3/views/onboarding_customer_view.dart';
-import 'package:mazare3/views/onboarding_farmer_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../routes/routes.dart';
@@ -15,7 +13,7 @@ class FarmerOrCustomerView extends StatelessWidget {
   Widget build(BuildContext context) {
     final _controller = OnboardingFarmerOrCustomerController();
     return Scaffold(
-      backgroundColor: Colors.white,
+      
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(bottom: 80),
@@ -35,7 +33,7 @@ class FarmerOrCustomerView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
 
-                        // margin: EdgeInsets.all(10.0),
+                        
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SvgPicture.asset(
@@ -57,14 +55,19 @@ class FarmerOrCustomerView extends StatelessWidget {
               const Text(
                 'Mazare3',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  color: Color(0xff858585),
+                  
                   fontSize: 25.0,
                 ),
               ),
               const SizedBox(height: 15),
-              const Text(
-                'Mazare3 is here to help farm owners and customers',
-                style: TextStyle(fontSize: 15.0),
+              const Padding(
+                padding: EdgeInsets.only(left:80.0,right:80.0),
+                child:  Text(
+                  'Mazare3 is here to help farm owners and customers',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 15.0,color: Color(0xffA6A6A6)),
+                ),
               ),
               const SizedBox(height: 32),
               Container(
@@ -75,28 +78,28 @@ class FarmerOrCustomerView extends StatelessWidget {
                   size: const Size(0, 0),
                   painter: RPSCustomPainter(),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       TextButton(
                           onPressed: () {
-                            Get.toNamed(RoutesClass.getOnboardingFarmerRoute());
+                            Get.toNamed(RoutesClass.getOnboardingCustomerRoute());
                           },
                           child: const Text(
-                            'Farm owner',
+                            'Customer',
                             style: TextStyle(
-                              
+                              fontFamily: "Georgia",
                               fontSize: 16.0
                             ),
                             )
                             ),
                       TextButton(
                         onPressed: () {
-                          Get.toNamed(RoutesClass.getOnboardingCustomerRoute());
+                          Get.toNamed(RoutesClass.getOnboardingFarmerRoute());
                         },
                         child: const Text(
-                          'Customer',
+                          'Farm owner',
                           style: TextStyle(
-                              
+                              fontFamily: "Georgia",
                               fontSize: 16.0
                             ),),
                       )
@@ -112,12 +115,12 @@ class FarmerOrCustomerView extends StatelessWidget {
   }
 }
 
-//Copy this CustomPainter code to the Bottom of the File
+
 class RPSCustomPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = Colors.white.withOpacity(1.0);
+    paint_0_fill.color = Colors.transparent.withOpacity(1.0);
     canvas.drawRRect(
         RRect.fromRectAndCorners(
             Rect.fromLTWH(size.width * 0.02000000, size.height * 0.08000000,
@@ -143,7 +146,7 @@ class RPSCustomPainter extends CustomPainter {
         paint_1_stroke);
 
     Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
-    paint_1_fill.color = Color.fromARGB(255, 255, 255, 255).withOpacity(1.0);
+    paint_1_fill.color = const Color(0xfffafafa).withOpacity(1.0);
     canvas.drawRRect(
         RRect.fromRectAndCorners(
             Rect.fromLTWH(size.width * 0.01812500, size.height * 0.07250000,
@@ -157,7 +160,7 @@ class RPSCustomPainter extends CustomPainter {
     Paint paint_2_stroke = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
-    paint_2_stroke.color = Color(0xff2F8286).withOpacity(1.0);
+    paint_2_stroke.color = const Color(0xff2F8286).withOpacity(1.0);
     canvas.drawLine(
         Offset(size.width * 0.5012500, size.height * 0.2000000),
         Offset(size.width * 0.5012500, size.height * 0.7900000),

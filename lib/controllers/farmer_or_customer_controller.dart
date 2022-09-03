@@ -10,21 +10,21 @@ class OnboardingFarmerOrCustomerController extends GetxController {
   forwardAction() {
     if (isLastPage) {
       jumpToPage(1);
-    } else
+    } else {
       pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
+    }
   }
 
-  jumpToPage(index){
-    pageController.animateToPage(index,duration: 300.milliseconds, curve: Curves.ease);
+  jumpToPage(index) {
+    pageController.animateToPage(index,
+        duration: 300.milliseconds, curve: Curves.ease);
   }
-
 
   List<OnboardingInfo> onboardingPages = [
-    OnboardingInfo('assets/onboarding_images/finding-the-right-farm.svg', '',
-        ''),
-    OnboardingInfo('assets/onboarding_images/for-sale-pana.svg', '',
-        ''),
-    OnboardingInfo('assets/onboarding_images/we-value-our-customers.svg', '',
-        ''),
+    OnboardingInfo(
+        'assets/onboarding_images/finding-the-right-farm.svg', '', ''),
+    OnboardingInfo('assets/onboarding_images/for-sale-pana.svg', '', ''),
+    OnboardingInfo(
+        'assets/onboarding_images/we-value-our-customers.svg', '', ''),
   ];
 }

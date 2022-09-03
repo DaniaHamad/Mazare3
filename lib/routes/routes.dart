@@ -1,10 +1,11 @@
 import 'package:get/get.dart';
-import 'package:mazare3/views/login_view.dart';
+import 'package:mazare3/views/signup_view.dart';
 import 'package:mazare3/views/onboarding_farmer_view.dart';
 import 'package:mazare3/views/signup_customer_view.dart';
 import 'package:mazare3/views/signup_farmer_view.dart';
 import '../views/farmer_or_customer_view.dart';
 import '../views/home_customer_view.dart';
+import '../views/login_view.dart';
 import '../views/onboarding_customer_view.dart';
 
 class RoutesClass {
@@ -14,6 +15,7 @@ class RoutesClass {
   static String signupCustomer = "/SignupCustomer";
   static String signupFarmer = "/SignupFarmer";
   static String login = "/login";
+  static String signup = "/signup";
   static String homeCustomer = "/homeCustomer";
 
   static String getFarmerOrCustomerRoute() => farmerOrCustomer;
@@ -22,6 +24,7 @@ class RoutesClass {
   static String getSignUpCustomerRoute() => signupCustomer;
   static String getSignUpFarmerRoute() => signupFarmer;
   static String getLoginRoute() => login;
+  static String getSignupRoute() => signup;
   static String getHomeCustomerRoute() => homeCustomer;
 
   static List<GetPage> routes = [
@@ -31,6 +34,7 @@ class RoutesClass {
     GetPage(name: signupCustomer, page: () => SignupCustomerView()),
     GetPage(name: signupFarmer, page: () => SignupFarmerView()),
     GetPage(name: login, page: () => LoginView()),
+    GetPage(name: signup, page: () => SignupView()),
     GetPage(name: homeCustomer, page: () => HomeCustomerView()),
   ];
 }
