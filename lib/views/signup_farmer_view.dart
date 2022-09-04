@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../controllers/signup_farmer_controller.dart';
 import '../routes/routes.dart';
 import 'farmer_or_customer_view.dart';
 import 'signup_view.dart';
@@ -12,6 +13,9 @@ class SignupFarmerView extends StatelessWidget {
   TextEditingController passCtrl = TextEditingController();
 
   SignupFarmerView({Key? key}) : super(key: key);
+
+  //get pickImage => null;
+  final _controller = SignUpFarmerController();
 
   @override
   Widget build(BuildContext context) {
@@ -168,7 +172,9 @@ class SignupFarmerView extends StatelessWidget {
                 child: Column(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.pickImage();
+                      },
                       icon: const Icon(Icons.file_upload_outlined),
                       color: Colors.teal.shade300,
                       iconSize: 40,
@@ -192,6 +198,20 @@ class SignupFarmerView extends StatelessWidget {
                   ],
                 ),
               ),
+              /////
+              /*const SizedBox(height: 10),
+              ElevatedButton(
+                  onPressed: () {
+                    _controller.pickImage();
+                  },
+                  child: Row(
+                    children: const [
+                      Icon(Icons.image_outlined),
+                      Text('Pick an image from gallery')
+                    ],
+                  )),*/
+
+              ///
               const SizedBox(height: 18),
               MaterialButton(
                   minWidth: 800,
@@ -241,4 +261,3 @@ class SignupFarmerView extends StatelessWidget {
     );
   }
 }
-
