@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../controllers/signup_farmer_controller.dart';
 import '../routes/routes.dart';
 import 'farmer_or_customer_view.dart';
 import 'login_view.dart';
@@ -12,6 +13,8 @@ class SignupFarmerView extends StatelessWidget {
   TextEditingController passCtrl = TextEditingController();
 
   SignupFarmerView({Key? key}) : super(key: key);
+
+  SignUpFarmerController _controller = SignUpFarmerController();
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +122,9 @@ class SignupFarmerView extends StatelessWidget {
                         child: Column(
                           children: [
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                _controller.pickImage();
+                              },
                               icon: const Icon(Icons.file_upload_outlined),
                               color: Colors.teal.shade300,
                               iconSize: 40,
@@ -200,4 +205,3 @@ class SignupFarmerView extends StatelessWidget {
     );
   }
 }
-
