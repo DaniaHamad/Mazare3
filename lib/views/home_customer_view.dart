@@ -59,22 +59,26 @@ class HomeCustomerView extends StatelessWidget {
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.only(right:200.0,left:20.0),
-              child: RichText(
-                textAlign: TextAlign.left,
-                text: const TextSpan(
-                  text: 'Let\'s find your ',
-                  
-                  style: TextStyle(
-                    
-                      color: Color.fromRGBO(158, 158, 158, 1), fontSize: 26.0),
-                  children: <TextSpan>[
-                    TextSpan(
-                        text: 'farm!',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.teal)),
-                  ],
-                ),
+              padding: const EdgeInsets.only(left: 25.0),
+              child: Row(
+                children: [
+                  RichText(
+                    textAlign: TextAlign.left,
+                    text: const TextSpan(
+                      text: 'Let\'s find\nyour ',
+                      
+                      style: TextStyle(
+                        
+                          color: Color.fromRGBO(158, 158, 158, 1), fontSize: 26.0),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'farm!',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, color: Colors.teal)),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
             const SizedBox(

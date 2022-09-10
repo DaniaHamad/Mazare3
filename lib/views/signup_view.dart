@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mazare3/controllers/signup_controller.dart';
 import '../routes/routes.dart';
 import 'signup_farmer_view.dart';
 
 class SignupView extends StatelessWidget {
-  const SignupView({Key? key}) : super(key: key);
-
+   SignupView({Key? key}) : super(key: key);
+   final _controller = SignUpController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +72,7 @@ class SignupView extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Get.toNamed(RoutesClass.getSignUpFarmerRoute());;
+                        _controller.goToSignUpView();
                       }),
                   const SizedBox(
                     height: 20,

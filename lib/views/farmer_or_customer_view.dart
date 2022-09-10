@@ -13,7 +13,6 @@ class FarmerOrCustomerView extends StatelessWidget {
   Widget build(BuildContext context) {
     final _controller = OnboardingFarmerOrCustomerController();
     return Scaffold(
-      
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(bottom: 80),
@@ -32,8 +31,6 @@ class FarmerOrCustomerView extends StatelessWidget {
                           color: const Color(0xFFF5F5F5),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-
-                        
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SvgPicture.asset(
@@ -56,17 +53,16 @@ class FarmerOrCustomerView extends StatelessWidget {
                 'Mazare3',
                 style: TextStyle(
                   color: Color(0xff858585),
-                  
                   fontSize: 25.0,
                 ),
               ),
               const SizedBox(height: 15),
               const Padding(
-                padding: EdgeInsets.only(left:80.0,right:80.0),
-                child:  Text(
+                padding: EdgeInsets.only(left: 80.0, right: 80.0),
+                child: Text(
                   'Mazare3 is here to help farm owners and customers',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15.0,color: Color(0xffA6A6A6)),
+                  style: TextStyle(fontSize: 15.0, color: Color(0xffA6A6A6)),
                 ),
               ),
               const SizedBox(height: 32),
@@ -82,26 +78,22 @@ class FarmerOrCustomerView extends StatelessWidget {
                     children: [
                       TextButton(
                           onPressed: () {
-                            Get.toNamed(RoutesClass.getOnboardingCustomerRoute());
+                            _controller.goToView("customer");
                           },
                           child: const Text(
                             'Customer',
                             style: TextStyle(
-                              fontFamily: "Georgia",
-                              fontSize: 16.0
-                            ),
-                            )
-                            ),
+                                fontFamily: "Georgia", fontSize: 16.0),
+                          )),
                       TextButton(
                         onPressed: () {
-                          Get.toNamed(RoutesClass.getOnboardingFarmerRoute());
+                          _controller.goToView("farmer");
                         },
                         child: const Text(
                           'Farm owner',
-                          style: TextStyle(
-                              fontFamily: "Georgia",
-                              fontSize: 16.0
-                            ),),
+                          style:
+                              TextStyle(fontFamily: "Georgia", fontSize: 16.0),
+                        ),
                       )
                     ],
                   ),
@@ -114,7 +106,6 @@ class FarmerOrCustomerView extends StatelessWidget {
     );
   }
 }
-
 
 class RPSCustomPainter extends CustomPainter {
   @override

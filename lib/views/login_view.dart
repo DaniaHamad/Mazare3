@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mazare3/controllers/login_controller.dart';
 import '../routes/routes.dart';
 import 'signup_customer_view.dart';
 
@@ -7,6 +8,8 @@ class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
   TextEditingController emailCtrl = TextEditingController();
   TextEditingController passCtrl = TextEditingController();
+
+  final _controller = LoginController();
 
   @override
   Widget build(BuildContext context) {
@@ -83,7 +86,7 @@ class LoginView extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                onPressed: () {}),
+                onPressed: () {_controller.goToHomeView();}),
             const SizedBox(
               height: 20,
             ),
@@ -166,7 +169,7 @@ class LoginView extends StatelessWidget {
                     onSurface: Colors.teal[300],
                   ),
                   onPressed: () {
-                    Get.to(SignupCustomerView());
+                    _controller.goToSignUpView();
                   },
                   child: const Text('sign up?'),
                 ),
