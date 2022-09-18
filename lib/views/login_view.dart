@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/login_controller.dart';
 import '../routes/routes.dart';
@@ -20,7 +21,9 @@ class LoginView extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(top: 20.0, left: 20),
           child: OutlinedButton(
-            onPressed: () {Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());},
+            onPressed: () {
+              Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());
+            },
             style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
@@ -34,12 +37,11 @@ class LoginView extends StatelessWidget {
           ),
         ),
       ),
-      
       body: Padding(
         padding: const EdgeInsets.all(25.0),
         child: Column(
           children: [
-             Icon(
+            Icon(
               Icons.photo,
               color: Colors.grey.shade300,
               size: 100,
@@ -86,7 +88,9 @@ class LoginView extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                onPressed: () {_controller.goToHomeView();}),
+                onPressed: () {
+                  _controller.goToHomeView();
+                }),
             const SizedBox(
               height: 20,
             ),
@@ -128,10 +132,10 @@ class LoginView extends StatelessWidget {
                     onPrimary: Colors.black,
                   ),
                   onPressed: () {},
-                  child: const Image(
-                    image: AssetImage("assets/images/google.png"),
-                    height: 22,
-                    width: 28,
+                  child: new SvgPicture.asset(
+                    'assets/images/icons8-google.svg',
+                    height: 28.0,
+                    width: 28.0,
                   ),
                 ),
                 const SizedBox(
@@ -143,10 +147,10 @@ class LoginView extends StatelessWidget {
                     onPrimary: Colors.black,
                   ),
                   onPressed: () {},
-                  child: const Image(
-                    image: AssetImage("assets/images/facebook.png"),
-                    height: 22,
-                    width: 28,
+                  child: new SvgPicture.asset(
+                    'assets/images/icons8-facebook.svg',
+                    height: 28.0,
+                    width: 28.0,
                   ),
                 ),
               ],

@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/signup_controller.dart';
 import '../routes/routes.dart';
 import 'signup_farmer_view.dart';
 
 class SignupView extends StatelessWidget {
-   SignupView({Key? key}) : super(key: key);
-   final _controller = SignUpController();
+  SignupView({Key? key}) : super(key: key);
+  final _controller = SignUpController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +18,9 @@ class SignupView extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.only(top: 20.0, left: 20),
           child: OutlinedButton(
-            onPressed: () {Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());},
+            onPressed: () {
+              Get.toNamed(RoutesClass.getFarmerOrCustomerRoute());
+            },
             style: OutlinedButton.styleFrom(
                 padding: EdgeInsets.zero,
                 shape: RoundedRectangleBorder(
@@ -115,10 +118,10 @@ class SignupView extends StatelessWidget {
                           onPrimary: Colors.black,
                         ),
                         onPressed: () {},
-                        child: const Image(
-                          image: AssetImage("assets/images/google.png"),
-                          height: 22,
-                          width: 28,
+                        child: new SvgPicture.asset(
+                          'assets/images/icons8-google.svg',
+                          height: 28.0,
+                          width: 28.0,
                         ),
                       ),
                       const SizedBox(
@@ -130,10 +133,10 @@ class SignupView extends StatelessWidget {
                           onPrimary: Colors.black,
                         ),
                         onPressed: () {},
-                        child: const Image(
-                          image: AssetImage("assets/images/facebook.png"),
-                          height: 22,
-                          width: 28,
+                        child: new SvgPicture.asset(
+                          'assets/images/icons8-facebook.svg',
+                          height: 28.0,
+                          width: 28.0,
                         ),
                       ),
                     ],
@@ -162,7 +165,6 @@ class SignupView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  
                 ]),
               ),
             ),
