@@ -52,7 +52,7 @@ class HomeCustomerView extends StatelessWidget {
           ),
         ],
       ),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             const SizedBox(
@@ -68,8 +68,8 @@ class HomeCustomerView extends StatelessWidget {
                       text: 'Let\'s find\nyour ',
                       
                       style: TextStyle(
-                        
-                          color: Color.fromRGBO(158, 158, 158, 1), fontSize: 26.0),
+                        fontWeight: FontWeight.bold,
+                          color: Colors.grey, fontSize: 26.0),
                       children: <TextSpan>[
                         TextSpan(
                             text: 'farm!',
@@ -85,7 +85,7 @@ class HomeCustomerView extends StatelessWidget {
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(25.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -196,14 +196,27 @@ class HomeCustomerView extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              child: Container(
-                color: const Color.fromARGB(249, 249, 249, 249),
-                child: ListView(
+            Container(
+              height:200 ,
+              color: const Color.fromARGB(249, 249, 249, 249),
+              child: ListView.builder(
+                  itemCount: 20,
                   scrollDirection: Axis.horizontal,
-                  children: [],
-                ),
-              ),
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom:20.0),
+                      child: Container(
+                        width: 150,
+                        height: 150,
+                        margin: EdgeInsets.only(left: 8, right: 8, top: 20),
+                        padding:
+                            EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    );
+                  })
             ),
             const SizedBox(
               height: 15,
@@ -238,12 +251,28 @@ class HomeCustomerView extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [],
-              ),
+            SizedBox(
+              height:100 ,
+              child: ListView.builder(
+                  itemCount: 20,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return  Padding(
+                      padding: const EdgeInsets.only(bottom:20.0),
+                      child: Container(
+                        width: 100,
+                        height: 50,
+                        margin: EdgeInsets.only(left: 8, right: 8, top: 20),
+                        padding:
+                            EdgeInsets.only(top: 20.0, left: 20.0, right: 20.0),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                        ),
+                      ),
+                    );
+                  })
             ),
+            SizedBox(height: 50,)
           ],
         ),
       ),

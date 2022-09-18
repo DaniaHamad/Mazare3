@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mazare3/views/home_farmer_view.dart';
 import 'package:mazare3/views/signup_view.dart';
 import 'package:mazare3/views/onboarding_farmer_view.dart';
 import 'package:mazare3/views/signup_customer_view.dart';
@@ -17,6 +18,7 @@ class RoutesClass {
   static String login = "/login";
   static String signup = "/signup";
   static String homeCustomer = "/homeCustomer";
+  static String homeFarmer = "/homeFarmer";
 
   static String getFarmerOrCustomerRoute() => farmerOrCustomer;
   static String getOnboardingCustomerRoute() => onboardingCustomer;
@@ -26,6 +28,7 @@ class RoutesClass {
   static String getLoginRoute() => login;
   static String getSignupRoute() => signup;
   static String getHomeCustomerRoute() => homeCustomer;
+  static String getHomeFarmerRoute() => homeFarmer;
 
   static List<GetPage> routes = [
     GetPage(name: farmerOrCustomer, page: () => FarmerOrCustomerView()),
@@ -36,5 +39,6 @@ class RoutesClass {
     GetPage(name: login, page: () => LoginView()),
     GetPage(name: signup, page: () => SignupView()),
     GetPage(name: homeCustomer, page: () => HomeCustomerView()),
+    GetPage(name: homeFarmer, page: () => HomeFarmerView()),
   ];
 }

@@ -20,7 +20,7 @@ class LoginController extends GetxController {
   goToHomeView(){
     switch (userRoad.userType) {
       case User.FarmOwner:
-        
+        Get.toNamed(RoutesClass.getHomeFarmerRoute());
         break;
       case User.Customer:
         Get.toNamed(RoutesClass.getHomeCustomerRoute());
