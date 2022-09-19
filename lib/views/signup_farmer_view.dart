@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import '../controllers/signup_farmer_controller.dart';
 import '../routes/routes.dart';
 import 'farmer_or_customer_view.dart';
@@ -123,7 +126,9 @@ class SignupFarmerView extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {
-                                _controller.pickImage();
+                                showModalBottomSheet(
+                                    context: context,
+                                    builder: (context) => bottomSheet(context));
                               },
                               icon: const Icon(Icons.file_upload_outlined),
                               color: Colors.teal.shade300,
@@ -142,10 +147,22 @@ class SignupFarmerView extends StatelessWidget {
                               height: 20,
                               color: Colors.grey.shade400,
                             ),
-                            const Padding(
-                              padding: EdgeInsets.fromLTRB(0.0, 0.0, 240, 0.0),
-                              child: Icon(Icons.insert_drive_file_outlined),
-                            )
+                            Obx(() {
+                              return _controller.isSelectedImagePath.value ==
+                                      true
+                                  ? Center(
+                                    child: Image(
+                                        image: _controller.isSelectedImagePath
+                                                    .value ==
+                                                true
+                                            ? FileImage(File(_controller
+                                                .selectedImagePath
+                                                .value)) as ImageProvider
+                                            : NetworkImage(
+                                                "https://static7.depositphotos.com/1086305/731/i/600/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg")),
+                                  )
+                                  : Icon(Icons.insert_drive_file_outlined);
+                            })
                           ],
                         ),
                       ),
@@ -202,6 +219,81 @@ class SignupFarmerView extends StatelessWidget {
         ),
       ),
       obscureText: secure,
+    );
+  }
+
+  Widget bottomSheet(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      color: Colors.grey[200],
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+      width: double.infinity,
+      height: size.height * 0.2,
+      child: Column(children: [
+        const Text(
+          "Choose Photo",
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+
+        const SizedBox(
+          height: 50,
+        ), // SizedBox
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: () {
+                _controller.takePhoto(ImageSource.gallery);
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Icon(
+                    Icons.image,
+                    color: Colors.teal,
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    "Gallery",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              width: 80,
+            ),
+            InkWell(
+              onTap: () {
+                _controller.takePhoto(ImageSource.camera);
+              },
+              child: Column(
+                children: const [
+                  Icon(
+                    Icons.camera,
+                    color: Colors.teal,
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    "Camera",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ]),
     );
   }
 }

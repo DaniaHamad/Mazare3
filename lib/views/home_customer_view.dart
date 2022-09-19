@@ -216,10 +216,10 @@ class HomeCustomerView extends StatelessWidget {
                         child: Container(
                           width: 150,
                           height: 150,
-                          margin: EdgeInsets.only(left: 8, right: 8, top: 20),
-                          padding: EdgeInsets.only(
+                          margin: const EdgeInsets.only(left: 8, right: 8, top: 20),
+                          padding: const EdgeInsets.only(
                               top: 20.0, left: 20.0, right: 20.0),
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.grey,
                           ),
                         ),
@@ -260,6 +260,7 @@ class HomeCustomerView extends StatelessWidget {
             ),
             SizedBox(
                 height: 100,
+                //TODO(Dania): Recommended Farm cards go here
                 child: ListView.builder(
                     itemCount: 20,
                     scrollDirection: Axis.horizontal,
@@ -268,9 +269,8 @@ class HomeCustomerView extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 20.0),
                         child: Container(
                           width: 100,
-                          height: 50,
-                          margin: EdgeInsets.only(left: 8, right: 8, top: 20),
-                          padding: EdgeInsets.only(
+                          margin: const EdgeInsets.only(left: 8, right: 8, top: 20),
+                          padding: const EdgeInsets.only(
                               top: 20.0, left: 20.0, right: 20.0),
                           decoration: BoxDecoration(
                             color: Colors.grey[300],
@@ -278,7 +278,7 @@ class HomeCustomerView extends StatelessWidget {
                         ),
                       );
                     })),
-            SizedBox(
+            const SizedBox(
               height: 50,
             )
           ],
