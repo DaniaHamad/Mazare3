@@ -6,10 +6,10 @@ class HomeFarmerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         leading: Padding(
           padding: const EdgeInsets.all(10.0),
           child: OutlinedButton(

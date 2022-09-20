@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:mazare3/widgets/cards/farm_card.dart';
 import 'package:mazare3/views/home_farmer_view.dart';
 import 'package:mazare3/views/signup_view.dart';
 import 'package:mazare3/views/onboarding_farmer_view.dart';
@@ -8,7 +9,6 @@ import '../views/farmer_or_customer_view.dart';
 import '../views/home_customer_view.dart';
 import '../views/login_view.dart';
 import '../views/onboarding_customer_view.dart';
-import '../views/add_details_view.dart';
 
 
 class RoutesClass {
@@ -22,6 +22,7 @@ class RoutesClass {
   static String homeCustomer = "/homeCustomer";
   static String homeFarmer = "/homeFarmer";
   static String addDetails = "/addDetails";
+  static String test = "/test";
 
   static String getFarmerOrCustomerRoute() => farmerOrCustomer;
   static String getOnboardingCustomerRoute() => onboardingCustomer;
@@ -33,6 +34,7 @@ class RoutesClass {
   static String getHomeCustomerRoute() => homeCustomer;
   static String getHomeFarmerRoute() => homeFarmer;
   static String getAddDetailsRoute() => addDetails;
+  static String getTestRoute() => test;
 
   static List<GetPage> routes = [
     GetPage(name: farmerOrCustomer, page: () => FarmerOrCustomerView()),
@@ -44,7 +46,8 @@ class RoutesClass {
     GetPage(name: signup, page: () => SignupView()),
     GetPage(name: homeCustomer, page: () => HomeCustomerView()),
     GetPage(name: homeFarmer, page: () => HomeFarmerView()),
-     GetPage(name: addDetails, page: () => AddDetailsView()),
+    //GetPage(name: addDetails, page: () => AddDetailsView()),
 
+    //GetPage(name: test, page: () => TestView()),
   ];
 }

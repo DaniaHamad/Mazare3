@@ -148,19 +148,9 @@ class SignupFarmerView extends StatelessWidget {
                               color: Colors.grey.shade400,
                             ),
                             Obx(() {
-                              return _controller.isSelectedImagePath.value ==
-                                      true
-                                  ? Center(
-                                    child: Image(
-                                        image: _controller.isSelectedImagePath
-                                                    .value ==
-                                                true
-                                            ? FileImage(File(_controller
-                                                .selectedImagePath
-                                                .value)) as ImageProvider
-                                            : NetworkImage(
-                                                "https://static7.depositphotos.com/1086305/731/i/600/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg")),
-                                  )
+                              return _controller.isSelectedImagePath.value ==true? Center(
+                                      child: Image(
+                                          image: FileImage(File(_controller.selectedImagePath.value)) as ImageProvider))
                                   : Icon(Icons.insert_drive_file_outlined);
                             })
                           ],
