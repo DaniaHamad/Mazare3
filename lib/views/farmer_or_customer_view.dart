@@ -57,45 +57,59 @@ class FarmerOrCustomerView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              const Padding(
-                padding: EdgeInsets.only(left: 80.0, right: 80.0),
+              const Center(
                 child: Text(
-                  'Mazare3 is here to help farm owners and customers',
+                  'Mazare3 is here to help \nfarm owners and customers',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 15.0, color: Color(0xffA6A6A6)),
                 ),
               ),
               const SizedBox(height: 32),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                height: 60,
-                width: 400,
-                child: CustomPaint(
-                  size: const Size(0, 0),
-                  painter: RPSCustomPainter(),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      TextButton(
-                          onPressed: () {
-                            _controller.goToView("customer");
-                          },
-                          child: const Text(
-                            'Customer',
-                            style: TextStyle(
-                                fontFamily: "Georgia", fontSize: 16.0),
-                          )),
-                      TextButton(
-                        onPressed: () {
-                          _controller.goToView("farmer");
-                        },
-                        child: const Text(
-                          'Farm owner',
-                          style:
-                              TextStyle(fontFamily: "Georgia", fontSize: 16.0),
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.teal),
+                  ),
+                  child: IntrinsicHeight(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: InkWell(
+                            onTap: (){_controller.goToView("farmer");},
+                            child: const Center(
+                              child: Text(
+                                    'Farm owner',
+                                    style: TextStyle(
+                                        fontFamily: "Georgia", fontSize: 16.0,color: Colors.teal),
+                                  ),
+                            ),
+                          ),
                         ),
-                      )
-                    ],
+                        const VerticalDivider(
+                          color: Colors.teal,
+                          thickness: 1,
+                          endIndent: 4,
+                          indent: 4,
+
+                        ),
+                        Expanded(
+                          child: InkWell(
+                            onTap: (){_controller.goToView("customer");},
+                            child: const Center(
+                              child: Text(
+                                  'Customer',
+                                  style:
+                                      TextStyle(fontFamily: "Georgia", fontSize: 16.0,color: Colors.teal),
+                                ),
+                            ),
+                          ),
+                        ),
+                        
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -107,59 +121,3 @@ class FarmerOrCustomerView extends StatelessWidget {
   }
 }
 
-class RPSCustomPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = Colors.transparent.withOpacity(1.0);
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-            Rect.fromLTWH(size.width * 0.02000000, size.height * 0.08000000,
-                size.width * 0.9600000, size.height * 0.8400000),
-            bottomRight: Radius.circular(size.width * 0.03750000),
-            bottomLeft: Radius.circular(size.width * 0.03750000),
-            topLeft: Radius.circular(size.width * 0.03750000),
-            topRight: Radius.circular(size.width * 0.03750000)),
-        paint_0_fill);
-
-    Paint paint_1_stroke = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 4; //size.width * 0.003750000
-    paint_1_stroke.color = Color(0xff2F8286).withOpacity(1.0);
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-            Rect.fromLTWH(size.width * 0.01812500, size.height * 0.07250000,
-                size.width * 0.9637500, size.height * 0.8550000),
-            bottomRight: Radius.circular(size.width * 0.03937500),
-            bottomLeft: Radius.circular(size.width * 0.03937500),
-            topLeft: Radius.circular(size.width * 0.03937500),
-            topRight: Radius.circular(size.width * 0.03937500)),
-        paint_1_stroke);
-
-    Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
-    paint_1_fill.color = const Color(0xfffafafa).withOpacity(1.0);
-    canvas.drawRRect(
-        RRect.fromRectAndCorners(
-            Rect.fromLTWH(size.width * 0.01812500, size.height * 0.07250000,
-                size.width * 0.9637500, size.height * 0.8550000),
-            bottomRight: Radius.circular(size.width * 0.03937500),
-            bottomLeft: Radius.circular(size.width * 0.03937500),
-            topLeft: Radius.circular(size.width * 0.03937500),
-            topRight: Radius.circular(size.width * 0.03937500)),
-        paint_1_fill);
-
-    Paint paint_2_stroke = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2;
-    paint_2_stroke.color = const Color(0xff2F8286).withOpacity(1.0);
-    canvas.drawLine(
-        Offset(size.width * 0.5012500, size.height * 0.2000000),
-        Offset(size.width * 0.5012500, size.height * 0.7900000),
-        paint_2_stroke);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return true;
-  }
-}

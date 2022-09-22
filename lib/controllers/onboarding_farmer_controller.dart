@@ -10,7 +10,7 @@ class OnboardingFarmerController extends GetxController {
 
   forwardAction() {
     if (isLastPage) {
-      Get.toNamed(RoutesClass.getSignupRoute());
+      Get.toNamed(RoutesClass.getSignupWithRoute());
     } else {
       pageController.nextPage(duration: 300.milliseconds, curve: Curves.ease);
     }

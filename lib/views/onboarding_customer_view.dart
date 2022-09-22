@@ -69,7 +69,7 @@ class OnboardingCustomerView extends StatelessWidget {
             TextButton(
               
                 onPressed: () {
-                  Get.toNamed(RoutesClass.getSignupRoute());
+                  Get.toNamed(RoutesClass.getSignupWithRoute());
                 },
                 child: const Text('Skip',style: TextStyle(fontFamily: "Georgia",color: Color(0xffA6A6A6)),),),
             Center(

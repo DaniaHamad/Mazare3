@@ -70,7 +70,7 @@ class OnboardingFarmerView extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                Get.toNamed(RoutesClass.getSignupRoute());
+                Get.toNamed(RoutesClass.getSignupWithRoute());
               },
               child: const Text(
                 'Skip',

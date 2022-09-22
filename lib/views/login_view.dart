@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mazare3/controllers/login_controller.dart';
 import '../routes/routes.dart';
-import 'signup_customer_view.dart';
+import 'signup_view.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
@@ -173,7 +173,7 @@ class LoginView extends StatelessWidget {
                     onSurface: Colors.teal[300],
                   ),
                   onPressed: () {
-                    _controller.goToSignUpView();
+                    Get.toNamed(RoutesClass.getSignUpRoute());
                   },
                   child: const Text('sign up?'),
                 ),
