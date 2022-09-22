@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mazare3/models/Enumerations/amenity.dart';
 import 'package:mazare3/models/Enumerations/availablity.dart';
 import 'package:mazare3/widgets/cards/my_farm_card.dart';
+import 'package:mazare3/widgets/cards/unfinish_listing_card.dart';
 
 class HomeFarmerView extends StatelessWidget {
   const HomeFarmerView({Key? key}) : super(key: key);
@@ -12,6 +13,7 @@ class HomeFarmerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -94,18 +96,12 @@ class HomeFarmerView extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                  height: 150,
+                  height: 170,
                   child: ListView.builder(
                       itemCount: 20,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        return Container(
-                          width: 300,
-                          margin: const EdgeInsets.only(right: 8, top: 20),
-                          decoration: BoxDecoration(
-                            color: Colors.teal[200],
-                          ),
-                        );
+                        return UnFinishListingCard(farmId: index, photoAddress: photoAddress, farmName: farmName);
                       })),
               const SizedBox(
                 height: 50,
