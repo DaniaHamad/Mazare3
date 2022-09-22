@@ -22,103 +22,104 @@ class FarmCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Container(
-        width: 200,
-        height: 250,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: Colors.white),
-        child: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  
-                  height: 150,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        fit: BoxFit.fill, image: NetworkImage(photoAddress)),
-                  ),
-                ),
-                Positioned(
-                  top: 0.0,
-                  right: 0.0,
-                  child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                        ),
-                      ),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.favorite,
-                            color: Colors.teal,
-                          ))),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left:8.0,top:8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+      child: InkWell(
+        onTap: (){print("pressed on card $farmId");},
+        child: Container(
+          width: 200,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20), color: Colors.white),
+          child: Column(
+            children: [
+              Stack(
                 children: [
-                  Text(
-                    farmName,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  Container(
+                    
+                    height: 150,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      image: DecorationImage(
+                          fit: BoxFit.fill, image: NetworkImage(photoAddress)),
+                    ),
                   ),
-                  SizedBox(height: 5,),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.location_on,
-                        color: Colors.teal[100],
-                        size: 15,
-                      ),
-                      Text(
-                        farmLocation,
-                        style: TextStyle(
-                          color: Colors.grey,
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: 5,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.attach_money,
-                            color: Colors.teal[100],
-                            size: 15,
+                  Positioned(
+                    top: 0.0,
+                    right: 0.0,
+                    child: Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(15),
                           ),
-                          Text(
-                        farmRate,
-                        style: TextStyle(
-                          color: Colors.grey,
                         ),
-                      ),
-                        ],
-                      ),
-                      
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Icon(Icons.arrow_forward, color: Colors.white),
-                        style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(),
-                          //padding: EdgeInsets.all(20),
-                          primary: Colors.teal, // <-- Button color// <-- Splash color
-                        ),
-                      )
-                    ],
-                  ),
+                        child: IconButton(
+                            onPressed: () {print("pressed heart of farm $farmId");},
+                            icon: const Icon(
+                              Icons.favorite,
+                              color: Colors.teal,
+                            ))),
+                  )
                 ],
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left:8.0,top:8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      farmName,
+                      style: const TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 5,),
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.location_on,
+                          color: Colors.teal[100],
+                          size: 15,
+                        ),
+                        Text(
+                          farmLocation,
+                          style: const TextStyle(
+                            color: Colors.grey,
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 5,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.attach_money,
+                              color: Colors.teal[100],
+                              size: 15,
+                            ),
+                            Text(
+                          farmRate,
+                          style: const TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
+                          ],
+                        ),
+                        
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            shape: const CircleBorder(),
+                            backgroundColor: Colors.teal,
+                          ),
+                          child: const Icon(Icons.arrow_forward, color: Colors.white),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

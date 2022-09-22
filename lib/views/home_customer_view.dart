@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mazare3/widgets/cards/farm_card.dart';
+import 'package:mazare3/widgets/cards/recommended_farm_card.dart';
 
 
 class HomeCustomerView extends StatelessWidget {
   const HomeCustomerView({Key? key}) : super(key: key);
-  final farmName=" Sedudo Farm";
-  final farmLocation=" Sarycuse,NY";
-  final farmRate=" 50.00/D";
+  final farmName="Sedudo Farm";
+  final farmLocation="Sarycuse,NY";
+  final farmRate="50.00/D";
   final String photoAddress ="https://static7.depositphotos.com/1086305/731/i/600/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg";
   
   @override
@@ -91,11 +92,11 @@ class HomeCustomerView extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            SearchMethod(),
+            const SearchMethod(),
             const SizedBox(
               height: 30,
             ),
-            FarmListManipulations(),
+            const FarmListManipulations(),
             const SizedBox(
               height: 15,
             ),
@@ -170,24 +171,12 @@ class HomeCustomerView extends StatelessWidget {
               ),
             ),
             SizedBox(
-                height: 100,
-                //TODO(Dania): Recommended Farm cards go here
+                height: 120,
                 child: ListView.builder(
                     itemCount: 20,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 20.0),
-                        child: Container(
-                          width: 100,
-                          margin: const EdgeInsets.only(left: 8, right: 8, top: 20),
-                          padding: const EdgeInsets.only(
-                              top: 20.0, left: 20.0, right: 20.0),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                          ),
-                        ),
-                      );
+                      return RecommendedFarmCard(farmId: index,photoAddress: photoAddress, farmName: farmName, farmLocation: farmLocation);
                     })),
             const SizedBox(
               height: 50,
@@ -312,7 +301,7 @@ class SearchMethod extends StatelessWidget {
           const SizedBox(
             width: 10,
           ),
-          Container(
+          SizedBox(
             width: 50,
             height: 50,
             child: OutlinedButton(
