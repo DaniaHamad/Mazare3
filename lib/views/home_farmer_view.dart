@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:mazare3/models/Enumerations/amenity.dart';
+import 'package:mazare3/models/Enumerations/availablity.dart';
+import 'package:mazare3/widgets/cards/my_farm_card.dart';
 
 class HomeFarmerView extends StatelessWidget {
   const HomeFarmerView({Key? key}) : super(key: key);
-
+  final farmName="Sedudo Farm";
+  final farmLocation="Sarycuse,NY";
+  final String photoAddress ="https://static7.depositphotos.com/1086305/731/i/600/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg";
+  final Availability farmAvailability = Availability.available;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -113,18 +118,12 @@ class HomeFarmerView extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                  height: 150,
+                  height: 130,
                   child: ListView.builder(
                       itemCount: 20,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) {
-                        return Container(
-                          width: 250,
-                          margin: const EdgeInsets.only(right: 8, top: 20),
-                          decoration: const BoxDecoration(
-                            color: Colors.grey,
-                          ),
-                        );
+                        return MyFarmCard(farmId: index, photoAddress: photoAddress, farmName: farmName, farmLocation: farmLocation, farmAvailability: farmAvailability);
                       })),
               const SizedBox(
                 height: 50,

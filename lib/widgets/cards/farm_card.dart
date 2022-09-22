@@ -72,9 +72,9 @@ class FarmCard extends StatelessWidget {
                     const SizedBox(height: 5,),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.location_on,
-                          color: Colors.teal[100],
+                          color: Colors.teal,
                           size: 15,
                         ),
                         Text(
@@ -91,9 +91,9 @@ class FarmCard extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.attach_money,
-                              color: Colors.teal[100],
+                              color: Colors.teal,
                               size: 15,
                             ),
                             Text(

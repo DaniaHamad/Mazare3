@@ -1,25 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:mazare3/models/Enumerations/availablity.dart';
 
-class RecommendedFarmCard extends StatelessWidget {
-  const RecommendedFarmCard({
+class MyFarmCard extends StatelessWidget {
+  const MyFarmCard({
     Key? key,
     required this.farmId,
     required this.photoAddress,
     required this.farmName,
     required this.farmLocation,
+    required this.farmAvailability,
   }) : super(key: key);
 
   final int farmId;
   final String photoAddress;
   final String farmName;
   final String farmLocation;
+  final Availability farmAvailability;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: InkWell(
-        onTap: (){print("recommended card $farmId");},
+        onTap: () {
+          print("my farm card $farmId");
+        },
         child: Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
@@ -60,6 +65,33 @@ class RecommendedFarmCard extends StatelessWidget {
                       )
                     ],
                   ),
+                  farmAvailability == Availability.available
+                      ? Row(
+                          children: const [
+                            Icon(
+                              Icons.house,
+                              color: Colors.teal,
+                              size: 15,
+                            ),
+                            Text("Available",
+                                style: TextStyle(
+                                  color: Colors.teal,
+                                )),
+                          ],
+                        )
+                      : Row(
+                          children: [
+                            Icon(
+                              Icons.house,
+                              color: Colors.teal[200],
+                              size: 15,
+                            ),
+                            Text("Unavailable",
+                                style: TextStyle(
+                                  color: Colors.teal[200],
+                                )),
+                          ],
+                        )
                 ],
               ),
               ElevatedButton(
