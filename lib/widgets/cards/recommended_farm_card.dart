@@ -19,7 +19,9 @@ class RecommendedFarmCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: InkWell(
-        onTap: (){print("recommended card $farmId");},
+        onTap: () {
+          print("recommended card $farmId");
+        },
         child: Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(

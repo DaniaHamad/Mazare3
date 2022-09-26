@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:mazare3/widgets/cards/farm_card.dart';
 import 'package:mazare3/widgets/cards/recommended_farm_card.dart';
 
-
 class HomeCustomerView extends StatelessWidget {
   const HomeCustomerView({Key? key}) : super(key: key);
-  final farmName="Sedudo Farm";
-  final farmLocation="Sarycuse,NY";
-  final farmRate="50.00/D";
-  final String photoAddress ="https://static7.depositphotos.com/1086305/731/i/600/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg";
-  
+  final farmName = "Sedudo Farm";
+  final farmLocation = "Sarycuse,NY";
+  final farmRate = "50.00/D";
+  final String photoAddress =
+      "https://static7.depositphotos.com/1086305/731/i/600/depositphotos_7315837-stock-photo-storm-is-coming-on-american.jpg";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,7 +135,12 @@ class HomeCustomerView extends StatelessWidget {
                     itemCount: 20,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return FarmCard(farmId: index,photoAddress: photoAddress, farmName: farmName, farmLocation: farmLocation, farmRate: farmRate);
+                      return FarmCard(
+                          farmId: index,
+                          photoAddress: photoAddress,
+                          farmName: farmName,
+                          farmLocation: farmLocation,
+                          farmRate: farmRate);
                     })),
             const SizedBox(
               height: 15,
@@ -176,7 +181,11 @@ class HomeCustomerView extends StatelessWidget {
                     itemCount: 20,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      return RecommendedFarmCard(farmId: index,photoAddress: photoAddress, farmName: farmName, farmLocation: farmLocation);
+                      return RecommendedFarmCard(
+                          farmId: index,
+                          photoAddress: photoAddress,
+                          farmName: farmName,
+                          farmLocation: farmLocation);
                     })),
             const SizedBox(
               height: 50,
@@ -291,8 +300,7 @@ class SearchMethod extends StatelessWidget {
                   color: Colors.teal,
                 ),
                 hintText: "Search destination",
-                hintStyle:
-                    TextStyle(fontSize: 20.0, color: Color(0xffDEDEDE)),
+                hintStyle: TextStyle(fontSize: 20.0, color: Color(0xffDEDEDE)),
                 filled: true,
                 fillColor: Color.fromARGB(249, 249, 249, 249),
               ),
@@ -311,10 +319,8 @@ class SearchMethod extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 side: const BorderSide(
-                    width: 2,
-                    color: Color.fromARGB(249, 249, 249, 249)),
-                backgroundColor:
-                    const Color.fromARGB(249, 249, 249, 249),
+                    width: 2, color: Color.fromARGB(249, 249, 249, 249)),
+                backgroundColor: const Color.fromARGB(249, 249, 249, 249),
               ),
               child: const Icon(
                 Icons.filter_list,
