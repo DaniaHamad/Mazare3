@@ -3,6 +3,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
+import 'package:google_maps_flutter_web/google_maps_flutter_web.dart';
+
 import '../routes/routes.dart';
 
 class FarmLocationView extends StatelessWidget {
