@@ -13,18 +13,26 @@ class FarmLocationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _controller = FarmLocatinController();
+    final _controller = FarmLocationController();
 
-    var _initialCameraPosition = const CameraPosition(
-        target: LatLng(31.9539, 35.9106), zoom: 11.5); // amman's coordinates
+    //final LatLng _center = const LatLng(31.9539, 35.9106);
 
-    return Scaffold(
-      body: GoogleMap(
-        initialCameraPosition: _initialCameraPosition,
+    return Stack(children: <Widget>[
+      GoogleMap(
+        initialCameraPosition:
+            CameraPosition(target: _controller.center, zoom: 11.5),
         myLocationButtonEnabled: false,
         zoomControlsEnabled: false,
-        //onMapCreated: (controller) => _controller._googleMapController = controller,
+        onMapCreated: (controller) =>
+            _controller.googleMapController = controller,
       ),
-    );
+      Padding(
+        padding: EdgeInsets.all(10),
+        child: Align(
+          alignment: Alignment.bottomCenter,
+          child: SizedBox(height: 10),
+        ),
+      )
+    ]);
   }
 }
