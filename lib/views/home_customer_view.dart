@@ -253,7 +253,7 @@ class FarmListManipulations extends StatelessWidget {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-              elevation: 0, backgroundColor: const Color(0xffF9F9F9)),
+              elevation: 0, primary: const Color(0xffF9F9F9)),
           child: const Text(
             "Popular",
             style: TextStyle(color: Colors.teal),
@@ -263,7 +263,7 @@ class FarmListManipulations extends StatelessWidget {
           textDirection: TextDirection.rtl,
           child: ElevatedButton.icon(
             style: ElevatedButton.styleFrom(
-                elevation: 0, backgroundColor: const Color(0xffF9F9F9)),
+                elevation: 0, primary: const Color(0xffF9F9F9)),
             onPressed: () {},
             icon: const Icon(
               Icons.keyboard_arrow_down,

@@ -25,7 +25,7 @@ class UnFinishListingCard extends StatelessWidget {
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color:  Colors.teal[100],
+            color: Colors.teal[100],
           ),
           width: 300,
           child: Row(
@@ -40,7 +40,9 @@ class UnFinishListingCard extends StatelessWidget {
                       fit: BoxFit.fill, image: NetworkImage(photoAddress)),
                 ),
               ),
-              const SizedBox(width: 10,),
+              const SizedBox(
+                width: 10,
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -52,7 +54,7 @@ class UnFinishListingCard extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
-                  backgroundColor: Colors.teal,
+                  primary: Colors.teal,
                 ),
                 child: const Icon(Icons.arrow_forward, color: Colors.white),
               )

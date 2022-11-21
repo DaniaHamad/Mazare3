@@ -70,7 +70,12 @@ class LoginView extends StatelessWidget {
                 onSurface: Colors.black,
               ),
               onPressed: () {},
-              child: const Text('forgot your password?'),
+              child: const Text(
+                'forgot your password?',
+                style: TextStyle(
+                  fontFamily: "Georgia",
+                ),
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -84,6 +89,7 @@ class LoginView extends StatelessWidget {
                 child: const Text(
                   ' Log in ',
                   style: TextStyle(
+                    fontFamily: "Georgia",
                     fontSize: 20,
                     color: Colors.white,
                   ),
@@ -108,6 +114,7 @@ class LoginView extends StatelessWidget {
                   'OR',
                   style: TextStyle(
                     fontSize: 15,
+                    fontFamily: "Georgia",
                     color: Colors.grey,
                   ),
                 ),
@@ -165,6 +172,7 @@ class LoginView extends StatelessWidget {
                   'Do not have an account?',
                   style: TextStyle(
                     color: Colors.grey,
+                    fontFamily: "Georgia",
                   ),
                 ),
                 TextButton(
@@ -175,7 +183,12 @@ class LoginView extends StatelessWidget {
                   onPressed: () {
                     Get.toNamed(RoutesClass.getSignUpRoute());
                   },
-                  child: const Text('sign up?'),
+                  child: const Text(
+                    'sign up?',
+                    style: TextStyle(
+                      fontFamily: "Georgia",
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -197,10 +210,13 @@ class LoginView extends StatelessWidget {
 buildMyField(String label, TextEditingController textCtrl, String hinttext,
     Icon myIcon, bool secure) {
   return TextField(
-    //style: TextStyle(fontSize: 10),
+    style: TextStyle(
+      fontFamily: "Georgia",
+    ),
     controller: textCtrl,
     decoration: InputDecoration(
       hintText: hinttext,
+      hintStyle: TextStyle(fontFamily: "Roboto"),
       suffixIcon: myIcon,
       labelText: label,
       border: OutlineInputBorder(

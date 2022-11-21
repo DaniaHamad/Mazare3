@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class FarmCard extends StatelessWidget {
@@ -23,7 +21,9 @@ class FarmCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: InkWell(
-        onTap: (){print("pressed on card $farmId");},
+        onTap: () {
+          print("pressed on card $farmId");
+        },
         child: Container(
           width: 200,
           decoration: BoxDecoration(
@@ -33,7 +33,6 @@ class FarmCard extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    
                     height: 150,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
@@ -52,7 +51,9 @@ class FarmCard extends StatelessWidget {
                           ),
                         ),
                         child: IconButton(
-                            onPressed: () {print("pressed heart of farm $farmId");},
+                            onPressed: () {
+                              print("pressed heart of farm $farmId");
+                            },
                             icon: const Icon(
                               Icons.favorite,
                               color: Colors.teal,
@@ -61,7 +62,7 @@ class FarmCard extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left:8.0,top:8.0),
+                padding: const EdgeInsets.only(left: 8.0, top: 8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -69,7 +70,9 @@ class FarmCard extends StatelessWidget {
                       farmName,
                       style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(height: 5,),
+                    const SizedBox(
+                      height: 5,
+                    ),
                     Row(
                       children: [
                         const Icon(
@@ -85,7 +88,9 @@ class FarmCard extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(height: 5,),
+                    const SizedBox(
+                      height: 5,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -97,21 +102,21 @@ class FarmCard extends StatelessWidget {
                               size: 15,
                             ),
                             Text(
-                          farmRate,
-                          style: const TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
+                              farmRate,
+                              style: const TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
                           ],
                         ),
-                        
                         ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
                             shape: const CircleBorder(),
-                            backgroundColor: Colors.teal,
+                            primary: Colors.teal,
                           ),
-                          child: const Icon(Icons.arrow_forward, color: Colors.white),
+                          child: const Icon(Icons.arrow_forward,
+                              color: Colors.white),
                         )
                       ],
                     ),

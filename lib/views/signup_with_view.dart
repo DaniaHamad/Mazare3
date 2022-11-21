@@ -67,6 +67,7 @@ class SignupWithView extends StatelessWidget {
                       child: const Text(
                         ' Sign Up with email ',
                         style: TextStyle(
+                          fontFamily: "Georgia",
                           fontSize: 20,
                           color: Colors.white,
                         ),
@@ -90,6 +91,7 @@ class SignupWithView extends StatelessWidget {
                       Text(
                         'OR',
                         style: TextStyle(
+                          fontFamily: "Georgia",
                           fontSize: 15,
                           color: Colors.grey,
                         ),
@@ -147,6 +149,7 @@ class SignupWithView extends StatelessWidget {
                       const Text(
                         'Already have an account?',
                         style: TextStyle(
+                          fontFamily: "Georgia",
                           color: Colors.grey,
                         ),
                       ),
@@ -158,7 +161,12 @@ class SignupWithView extends StatelessWidget {
                         onPressed: () {
                           Get.toNamed(RoutesClass.getLoginRoute());
                         },
-                        child: const Text('Login?'),
+                        child: const Text(
+                          'Login?',
+                          style: TextStyle(
+                            fontFamily: "Georgia",
+                          ),
+                        ),
                       ),
                     ],
                   ),

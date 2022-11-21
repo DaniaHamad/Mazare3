@@ -10,6 +10,7 @@ import '../views/home_customer_view.dart';
 import '../views/login_view.dart';
 import '../views/onboarding_customer_view.dart';
 import '../views/signup_with_view.dart';
+import '../views/farm_offers_view.dart';
 
 class RoutesClass {
   static String farmerOrCustomer = "/";
@@ -23,6 +24,7 @@ class RoutesClass {
   static String addDetails = "/addDetails";
   static String farmLocation = "/farmLocation";
   static String test = "/test";
+  static String farmOffers = "/farmOffers";
 
   static String getFarmerOrCustomerRoute() => farmerOrCustomer;
   static String getOnboardingCustomerRoute() => onboardingCustomer;
@@ -35,6 +37,7 @@ class RoutesClass {
   static String getAddDetailsRoute() => addDetails;
   static String getFarmLocationRoute() => farmLocation;
   static String getTestRoute() => test;
+  static String getFarmOffersRoute() => farmOffers;
 
   static List<GetPage> routes = [
     GetPage(name: farmerOrCustomer, page: () => FarmerOrCustomerView()),
@@ -48,5 +51,6 @@ class RoutesClass {
     //GetPage(name: addDetails, page: () => AddDetailsView()),
     GetPage(name: farmLocation, page: () => FarmLocationView()),
     //GetPage(name: test, page: () => TestView()),
+    GetPage(name: farmOffers, page: () => FarmOffersView()),
   ];
 }

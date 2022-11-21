@@ -121,6 +121,7 @@ class SignupView extends StatelessWidget {
                           child: const Text(
                             ' Create Account ',
                             style: TextStyle(
+                              fontFamily: "Georgia",
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -151,12 +152,13 @@ class SignupView extends StatelessWidget {
   buildMyField(String label, TextEditingController textCtrl, String hinttext,
       Icon myIcon, bool secure) {
     return TextField(
+      style: TextStyle(
+        fontFamily: "Georgia",
+      ),
       controller: textCtrl,
       decoration: InputDecoration(
         hintText: hinttext,
-        hintStyle: const TextStyle(
-          fontSize: 15,
-        ),
+        hintStyle: const TextStyle(fontSize: 15, fontFamily: "Roboto"),
         suffixIcon: myIcon,
         labelText: label,
         border: OutlineInputBorder(

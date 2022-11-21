@@ -98,7 +98,7 @@ class MyFarmCard extends StatelessWidget {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   shape: const CircleBorder(),
-                  backgroundColor: Colors.teal,
+                  primary: Colors.teal,
                 ),
                 child: const Icon(Icons.arrow_forward, color: Colors.white),
               )
